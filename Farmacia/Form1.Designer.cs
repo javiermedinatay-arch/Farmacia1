@@ -69,7 +69,7 @@
             this.button9.Location = new System.Drawing.Point(21, 520);
             this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(113, 58);
+            this.button9.Size = new System.Drawing.Size(113, 43);
             this.button9.TabIndex = 8;
             this.button9.Text = "Salir";
             this.button9.UseVisualStyleBackColor = false;
