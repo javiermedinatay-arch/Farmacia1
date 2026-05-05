@@ -65,6 +65,12 @@
     <Compile Include="Formularios\FrmCategoria.Designer.cs">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmLoginAcceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmLoginAcceso.Designer.cs">
+      <DependentUpon>FrmLoginAcceso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmPinSeguridad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmLoginAcceso.resx">
+      <DependentUpon>FrmLoginAcceso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPinSeguridad.resx">
       <DependentUpon>FrmPinSeguridad.cs</DependentUpon>
