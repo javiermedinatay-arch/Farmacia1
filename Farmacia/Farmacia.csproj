@@ -65,6 +65,12 @@
     <Compile Include="Formularios\FrmCategoria.Designer.cs">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmProducto.Designer.cs">
+      <DependentUpon>FrmProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmRegistroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmProducto.resx">
+      <DependentUpon>FrmProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmRegistroCliente.resx">
       <DependentUpon>FrmRegistroCliente.cs</DependentUpon>
