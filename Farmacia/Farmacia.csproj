@@ -59,6 +59,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmRegistroCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmRegistroCompras.Designer.cs">
+      <DependentUpon>FrmRegistroCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmRegistroEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmRegistroCompras.resx">
+      <DependentUpon>FrmRegistroCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmRegistroEmpleado.resx">
       <DependentUpon>FrmRegistroEmpleado.cs</DependentUpon>
