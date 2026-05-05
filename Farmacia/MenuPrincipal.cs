@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Farmacia.Formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Farmacia
 {
-    public partial class Form1 : Form
+    public partial class MenuPrincipal : Form
     {
-        public Form1()
+        public MenuPrincipal()
         {
             InitializeComponent();
         }
@@ -79,7 +80,8 @@ namespace Farmacia
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            FrmRegistroProveedor nuevoFormulario = new FrmRegistroProveedor();
+            nuevoFormulario.Show();
         }
 
         private void button3_Click_1(object sender, EventArgs e)
@@ -94,7 +96,8 @@ namespace Farmacia
 
         private void button9_Click(object sender, EventArgs e)
         {
-
+            FrmRegistroCompras nuevoFormulario = new FrmRegistroCompras();
+            nuevoFormulario.Show();
         }
 
         private void panel12_Paint(object sender, PaintEventArgs e)
@@ -104,22 +107,26 @@ namespace Farmacia
 
         private void button11_Click(object sender, EventArgs e)
         {
-
+            FrmRegistroEmpleado nuevoFormulario = new FrmRegistroEmpleado();
+            nuevoFormulario.Show();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-
+            FrmUsuario nuevoFormulario = new FrmUsuario();
+            nuevoFormulario.Show();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-
+            FrmRegistroCompras nuevoFormulario = new FrmRegistroCompras();
+            nuevoFormulario.Show();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-
+            FrmProducto nuevoFormulario = new FrmProducto();
+            nuevoFormulario.Show();
         }
 
         private void label22_Click(object sender, EventArgs e)
@@ -135,6 +142,27 @@ namespace Farmacia
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BTNVENTA_Click(object sender, EventArgs e)
+        {
+            FrmRegistroVentas nuevoFormulario = new FrmRegistroVentas();
+            nuevoFormulario.Show();
+        }
+
+        private void BTNSALIR_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+                "¿Seguro que deseas salir?",
+                "Confirmar salida",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }
