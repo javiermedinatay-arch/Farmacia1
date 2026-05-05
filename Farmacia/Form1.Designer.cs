@@ -39,37 +39,37 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -201,33 +201,126 @@
             this.panel2.Size = new System.Drawing.Size(830, 507);
             this.panel2.TabIndex = 10;
             // 
-            // label10
+            // panel10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(17, 17);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(189, 16);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Informacion y Condiciones";
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.label21);
+            this.panel10.Controls.Add(this.label19);
+            this.panel10.Location = new System.Drawing.Point(476, 374);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(133, 101);
+            this.panel10.TabIndex = 1;
             // 
-            // panel3
+            // label21
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Location = new System.Drawing.Point(624, 50);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(192, 139);
-            this.panel3.TabIndex = 2;
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(3, 31);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(101, 13);
+            this.label21.TabIndex = 16;
+            this.label21.Text = "Gestion de compras";
             // 
-            // panel4
+            // label19
             // 
-            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Location = new System.Drawing.Point(20, 50);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(598, 307);
-            this.panel4.TabIndex = 3;
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(1, 56);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(123, 26);
+            this.label19.TabIndex = 16;
+            this.label19.Text = "Administrar tus compras\r\nde forma rapida y segura";
+            // 
+            // panel9
+            // 
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.label20);
+            this.panel9.Controls.Add(this.label18);
+            this.panel9.Location = new System.Drawing.Point(320, 374);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(140, 101);
+            this.panel9.TabIndex = 1;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(3, 31);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(101, 13);
+            this.label20.TabIndex = 16;
+            this.label20.Text = "Gestion de compras";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(3, 56);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(123, 26);
+            this.label18.TabIndex = 16;
+            this.label18.Text = "Administrar tus compras\r\nde forma rapida y segura";
+            // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.label17);
+            this.panel8.Controls.Add(this.label16);
+            this.panel8.Location = new System.Drawing.Point(173, 374);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(130, 101);
+            this.panel8.TabIndex = 7;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 56);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(123, 26);
+            this.label17.TabIndex = 16;
+            this.label17.Text = "Administrar tus compras\r\nde forma rapida y segura";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(3, 31);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(101, 13);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "Gestion de compras";
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.label15);
+            this.panel7.Controls.Add(this.label14);
+            this.panel7.Location = new System.Drawing.Point(20, 374);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(138, 101);
+            this.panel7.TabIndex = 6;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 56);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(123, 26);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "Administrar tus compras\r\nde forma rapida y segura";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 31);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(101, 13);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Gestion de compras";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Location = new System.Drawing.Point(624, 374);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(192, 101);
+            this.panel6.TabIndex = 5;
             // 
             // panel5
             // 
@@ -239,13 +332,59 @@
             this.panel5.Size = new System.Drawing.Size(192, 162);
             this.panel5.TabIndex = 4;
             // 
-            // panel6
+            // label13
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Location = new System.Drawing.Point(624, 363);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(192, 112);
-            this.panel6.TabIndex = 5;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(12, 10);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(84, 13);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "Inkafarma Salud";
+            // 
+            // panel11
+            // 
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Location = new System.Drawing.Point(15, 38);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(163, 110);
+            this.panel11.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Location = new System.Drawing.Point(20, 50);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(589, 307);
+            this.panel4.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Location = new System.Drawing.Point(624, 50);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(192, 139);
+            this.panel3.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(24, 13);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(117, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Ubicacion tu Inkafarma";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(17, 17);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(189, 16);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Informacion y Condiciones";
             // 
             // label11
             // 
@@ -258,157 +397,18 @@
             this.label11.TabIndex = 11;
             this.label11.Text = "Inkafarma";
             // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.label15);
-            this.panel7.Controls.Add(this.label14);
-            this.panel7.Location = new System.Drawing.Point(20, 374);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(138, 101);
-            this.panel7.TabIndex = 6;
-            // 
-            // panel8
-            // 
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.label17);
-            this.panel8.Controls.Add(this.label16);
-            this.panel8.Location = new System.Drawing.Point(173, 374);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(130, 101);
-            this.panel8.TabIndex = 7;
-            // 
-            // panel9
-            // 
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Controls.Add(this.label20);
-            this.panel9.Controls.Add(this.label18);
-            this.panel9.Location = new System.Drawing.Point(329, 374);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(140, 101);
-            this.panel9.TabIndex = 1;
-            // 
-            // panel10
-            // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.label21);
-            this.panel10.Controls.Add(this.label19);
-            this.panel10.Location = new System.Drawing.Point(485, 374);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(133, 101);
-            this.panel10.TabIndex = 1;
-            // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(737, 24);
+            this.dateTimePicker1.Location = new System.Drawing.Point(712, 26);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(170, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(195, 20);
             this.dateTimePicker1.TabIndex = 12;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(24, 13);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(117, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Ubicacion tu Inkafarma";
-            // 
-            // panel11
-            // 
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Location = new System.Drawing.Point(15, 38);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(163, 110);
-            this.panel11.TabIndex = 0;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 10);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 13);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "Inkafarma Salud";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 31);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(101, 13);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Gestion de compras";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 56);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(123, 26);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "Administrar tus compras\r\nde forma rapida y segura";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(3, 31);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(101, 13);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "Gestion de compras";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 56);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(123, 26);
-            this.label17.TabIndex = 16;
-            this.label17.Text = "Administrar tus compras\r\nde forma rapida y segura";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(3, 56);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(123, 26);
-            this.label18.TabIndex = 16;
-            this.label18.Text = "Administrar tus compras\r\nde forma rapida y segura";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(1, 56);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(123, 26);
-            this.label19.TabIndex = 16;
-            this.label19.Text = "Administrar tus compras\r\nde forma rapida y segura";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(3, 31);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(101, 13);
-            this.label20.TabIndex = 16;
-            this.label20.Text = "Gestion de compras";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(3, 31);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(101, 13);
-            this.label21.TabIndex = 16;
-            this.label21.Text = "Gestion de compras";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label22.Location = new System.Drawing.Point(604, 30);
+            this.label22.Location = new System.Drawing.Point(595, 30);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(92, 13);
             this.label22.TabIndex = 8;
@@ -433,18 +433,18 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
