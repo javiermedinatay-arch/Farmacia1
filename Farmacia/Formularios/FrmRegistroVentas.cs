@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Farmacia.Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,10 @@ namespace Farmacia.Formularios
 {
     public partial class FrmRegistroVentas : Form
     {
+        VentaDAL ventaDAL = new VentaDAL();
+        ProductoDAL productoDAL = new ProductoDAL();
+        DataTable dtCarrito = new DataTable();
+
         public FrmRegistroVentas()
         {
             InitializeComponent();
@@ -28,6 +33,11 @@ namespace Farmacia.Formularios
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrmRegistroVentas_Load(object sender, EventArgs e)
         {
 
         }
