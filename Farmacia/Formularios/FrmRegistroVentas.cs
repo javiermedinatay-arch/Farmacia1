@@ -21,5 +21,10 @@ namespace Farmacia.Formularios
         {
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
