@@ -41,5 +41,10 @@ namespace Farmacia.Formularios
         {
 
         }
+
+        private void FrmRegistroCompras_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
