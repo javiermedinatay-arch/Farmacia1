@@ -1,12 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Farmacia.Datos
 {
-    internal class Conexion
+    public class Conexion
     {
-    }
+        private string cadena = @"Server=(localdb)\MSSQLLocalDB;Database=FarmaciaDB;Trusted_Connection=True;";
+
+        public SqlConnection GetConexion()
+        {
+            return new SqlConnection(cadena);
+        }
+}
 }
