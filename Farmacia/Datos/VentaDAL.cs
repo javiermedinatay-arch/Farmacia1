@@ -52,6 +52,18 @@ namespace Farmacia.Datos
             return respuesta;
         }
 
+        public DataTable ListarVentasRealizadas()
+        {
+            using (SqlConnection con = cn.GetConexion())
+            {
+                // Usamos la vista vw_ResumenVentas que creamos en SQL
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM farm.vw_ResumenVentas ORDER BY fecha_venta DESC", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
         // Puedes mantener aquí los métodos para listar clientes o empleados si no creaste sus propios DAL
         public DataTable ListarClientes()
         {

@@ -169,6 +169,13 @@ namespace Farmacia.Formularios
         }
         private void btn_cancelarVenta_Click(object sender, EventArgs e)
         {
+            // Limpiamos el DataTable del carrito para volver a vender
+            dtCarrito.Clear();
+
+            // Volvemos a enlazar el DataSource al carrito vacío
+            dgv_venta.DataSource = dtCarrito;
+
+            // Limpiamos los campos de texto
             LimpiarFormulario();
         }
 
@@ -256,5 +263,29 @@ namespace Farmacia.Formularios
                 txt_stock.Text = row["stock_actual"].ToString();
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Cambiamos el DataSource del DataGridView para mostrar el historial
+                DataTable dtHistorial = ventaDAL.ListarVentasRealizadas();
+
+                if (dtHistorial.Rows.Count > 0)
+                {
+                    dgv_venta.DataSource = dtHistorial;
+                    MessageBox.Show("Mostrando historial de ventas recientes.");
+                }
+                else
+                {
+                    MessageBox.Show("No hay ventas registradas para mostrar.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar el detalle: " + ex.Message);
+            }
+        }
+    }
     }
 }
