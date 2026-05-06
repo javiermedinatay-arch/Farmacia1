@@ -22,21 +22,23 @@ namespace Farmacia.Datos
             {
                 try
                 {
+                    // --- PASO CLAVE: Crear un clon con solo las columnas necesarias ---
+                    DataTable dtParaEnvio = detalles.DefaultView.ToTable(false, "idproducto", "cantidad", "precio");
+                    // Nota: Asegúrate de que el nombre "precio" coincida con la columna de tu dtCarrito
+
                     SqlCommand cmd = new SqlCommand("farm.usp_RegistrarVentaCompleta", con);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    // Parámetros básicos de la venta
                     cmd.Parameters.AddWithValue("@idcliente", obj.IdCliente);
                     cmd.Parameters.AddWithValue("@idempleado", obj.IdEmpleado);
                     cmd.Parameters.AddWithValue("@tipo_comprobante", obj.TipoComprobante);
                     cmd.Parameters.AddWithValue("@total_venta", obj.TotalVenta);
                     cmd.Parameters.AddWithValue("@metodo_pago", obj.MetodoPago);
 
-                    // Parámetro de tipo Tabla (El carrito de compras)
-                    // IMPORTANTE: Asegúrate que el DataTable 'detalles' tenga las columnas: idproducto, cantidad, precio_unitario
-                    SqlParameter paramDetalle = cmd.Parameters.AddWithValue("@detalles", detalles);
+                    // Enviamos el DataTable filtrado
+                    SqlParameter paramDetalle = cmd.Parameters.AddWithValue("@detalles", dtParaEnvio);
                     paramDetalle.SqlDbType = SqlDbType.Structured;
-                    paramDetalle.TypeName = "farm.DetalleVentaType"; // Nombre del TYPE creado en SQL
+                    paramDetalle.TypeName = "farm.DetalleVentaType";
 
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -44,7 +46,6 @@ namespace Farmacia.Datos
                 }
                 catch (Exception ex)
                 {
-                    // Puedes lanzar la excepción para capturarla en el formulario
                     throw new Exception("Error en la capa de datos: " + ex.Message);
                 }
             }

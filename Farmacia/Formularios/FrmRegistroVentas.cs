@@ -14,7 +14,7 @@ namespace Farmacia.Formularios
 {
     public partial class FrmRegistroVentas : Form
     {
-        // Instancias de la capa de datos
+        // Instancias de de acceso a datos y tabla temporal para el carrito
         VentaDAL ventaDAL = new VentaDAL();
         ProductoDAL productoDAL = new ProductoDAL();
         ClienteDAL clienteDAL = new ClienteDAL(); //
@@ -29,7 +29,7 @@ namespace Farmacia.Formularios
         private void FrmRegistroVentas_Load(object sender, EventArgs e)
         {
             ConfigurarCarrito();
-            CargarDatosIniciales();
+            CargarComboBox();
         }
         private void ConfigurarCarrito()
         {
@@ -42,10 +42,13 @@ namespace Farmacia.Formularios
                 dtCarrito.Columns.Add("subtotal", typeof(decimal));
             }
             dgv_venta.DataSource = dtCarrito;
-            dgv_venta.Columns["idproducto"].Visible = false; // Ocultamos el ID
+
+            // Ocultar ID y ajustar diseño
+            if (dgv_venta.Columns.Contains("idproducto")) dgv_venta.Columns["idproducto"].Visible = false;
+            dgv_venta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        private void CargarDatosIniciales()
+        private void CargarComboBox()
         {
             // Cargar ComboBoxes desde la DB
             cbo_cliente.DataSource = clienteDAL.ListarClientes();
@@ -60,30 +63,37 @@ namespace Farmacia.Formularios
             cbo_producto.DisplayMember = "nombre_producto";
             cbo_producto.ValueMember = "idproducto";
 
-            // Llenar opciones fijas
+            // Métodos de pago y comprobantes
             cbo_MetodoPago.Items.Clear();
             cbo_MetodoPago.Items.AddRange(new string[] { "Efectivo", "Tarjeta", "Yape/Plin" });
 
             cbo_TipoComprobante.Items.Clear();
             cbo_TipoComprobante.Items.AddRange(new string[] { "Boleta", "Factura" });
         }
+
+        // -- Botón AGREGAR PRODUCTO -- 
         private void btn_agregarProducto_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_cantidad.Text)) return;
+            if (string.IsNullOrWhiteSpace(txt_cantidad.Text))
+            {
+                MessageBox.Show("Ingrese una cantidad.");
+                return;
+            }
 
             int stockDisp = int.Parse(txt_stock.Text);
             int cantPedida = int.Parse(txt_cantidad.Text);
 
             if (cantPedida > stockDisp)
             {
-                MessageBox.Show("No hay suficiente stock.");
+                MessageBox.Show("No hay suficiente stock disponible.");
                 return;
             }
 
+            // Calculamos subtotal
             decimal precio = decimal.Parse(txt_precioUni.Text);
             decimal subtotal = cantPedida * precio;
 
-            // Agregar al DataTable del DataGridView
+            // Añadimos al DataGridView (a través del DataTable)
             dtCarrito.Rows.Add(
                 cbo_producto.SelectedValue,
                 cbo_producto.Text,
@@ -93,13 +103,16 @@ namespace Farmacia.Formularios
             );
 
             CalcularTotales();
+            txt_cantidad.Clear();
         }
 
+        // -- Botón ELIMINAR PRODUCTO -- 
         private void btn_EliminarProducto_Click(object sender, EventArgs e)
         {
             if (dgv_venta.CurrentRow != null)
             {
-                dgv_venta.Rows.Remove(dgv_venta.CurrentRow);
+                // Elimina la fila seleccionada del carrito
+                dgv_venta.Rows.RemoveAt(dgv_venta.CurrentRow.Index);
                 CalcularTotales();
             }
         }
@@ -115,6 +128,8 @@ namespace Farmacia.Formularios
             txt_Subtotal.Text = total.ToString("N2");
             txt_TotalFinal.Text = total.ToString("N2");
         }
+
+        // -- Botón CONFIRMAR PRODUCTO -- 
         private void btn_confirmarVenta_Click(object sender, EventArgs e)
         {
             if (dtCarrito.Rows.Count == 0) { MessageBox.Show("El carrito está vacío."); return; }
@@ -135,12 +150,12 @@ namespace Farmacia.Formularios
                 {
                     MessageBox.Show("¡Venta realizada con éxito!");
                     LimpiarFormulario();
-                    CargarDatosIniciales(); // Refrescar stocks
+                    CargarComboBox(); // Refrescar stocks
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al vender: " + ex.Message);
+                MessageBox.Show("Error al confirmar: " + ex.Message);
             }
         }
         private void LimpiarFormulario()
