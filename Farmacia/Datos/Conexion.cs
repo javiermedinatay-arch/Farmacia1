@@ -14,7 +14,8 @@ namespace Farmacia.Datos
 
         public SqlConnection GetConexion()
         {
-            return new SqlConnection(cadena);
+            SqlConnection sqlConnection = new SqlConnection(cadena);
+            return sqlConnection;
         }
     }
 }
