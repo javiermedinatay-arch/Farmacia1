@@ -24,7 +24,8 @@ namespace Farmacia.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            MenuPrincipal nuevo = new MenuPrincipal();
+            nuevo.Show();
         }
 
         private void label5_Click(object sender, EventArgs e)

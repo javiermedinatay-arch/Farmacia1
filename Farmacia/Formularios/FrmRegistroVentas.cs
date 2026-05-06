@@ -221,12 +221,14 @@ namespace Farmacia.Formularios
 
         private void btn_crearCliente_Click(object sender, EventArgs e)
         {
-
+            FrmRegistroCliente nuevo = new FrmRegistroCliente();
+            nuevo.Show();
         }
 
         private void btn_crearProducto_Click(object sender, EventArgs e)
         {
-
+            FrmProducto nuevo = new FrmProducto();
+            nuevo.Show();
         }
 
         private void dgv_venta_CellContentClick(object sender, DataGridViewCellEventArgs e)
