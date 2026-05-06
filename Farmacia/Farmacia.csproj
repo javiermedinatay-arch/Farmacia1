@@ -47,7 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\ClienteDAL.cs" />
     <Compile Include="Datos\Conexion.cs" />
+    <Compile Include="Datos\EmpleadoDAL.cs" />
+    <Compile Include="Datos\ProductoDAL.cs" />
     <Compile Include="Datos\VentaDAL.cs" />
     <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\Marca.cs" />

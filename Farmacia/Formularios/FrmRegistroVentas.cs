@@ -13,13 +13,21 @@ namespace Farmacia.Formularios
 {
     public partial class FrmRegistroVentas : Form
     {
+        // Instancias de la capa de datos
         VentaDAL ventaDAL = new VentaDAL();
         ProductoDAL productoDAL = new ProductoDAL();
+        ClienteDAL clienteDAL = new ClienteDAL(); //
+        EmpleadoDAL empleadoDAL = new EmpleadoDAL(); //
         DataTable dtCarrito = new DataTable();
 
         public FrmRegistroVentas()
         {
             InitializeComponent();
+        }
+
+        private void FrmRegistroVentas_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -37,9 +45,5 @@ namespace Farmacia.Formularios
 
         }
 
-        private void FrmRegistroVentas_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
