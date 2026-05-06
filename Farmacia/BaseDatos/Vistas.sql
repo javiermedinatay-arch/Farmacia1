@@ -1,4 +1,16 @@
-﻿-- Vista para el ComboBox de Empleados
+﻿-- =============================================
+-- 6. OBJETOS DE PROGRAMACIÓN (TIPOS Y VISTAS)
+-- =============================================
+
+-- Tipo de tabla para el carrito de compras desde C#
+CREATE TYPE farm.DetalleVentaType AS TABLE (
+    idproducto INT,
+    cantidad INT,
+    precio_unitario DECIMAL(10,2)
+);
+GO
+
+-- Vista para el ComboBox de Empleados
 CREATE VIEW farm.vw_ListarEmpleados AS
 SELECT idempleado, (nombres + ' ' + apellidos) AS nombre_completo, idcargo
 FROM farm.empleado;
@@ -33,4 +45,20 @@ FROM farm.venta v
 INNER JOIN farm.cliente c ON v.idcliente = c.idcliente
 INNER JOIN farm.empleado e ON v.idempleado = e.idempleado
 INNER JOIN farm.pago p ON v.idventa = p.idventa;
+GO
+
+-- Vista para el Historial de Ventas (Botón Detalle)
+CREATE VIEW farm.vw_ResumenVentas AS
+SELECT 
+    V.idventa AS [Nro Venta],
+    V.fecha_venta,
+    (C.nombres + ' ' + C.apellidos) AS [Cliente],
+    (E.nombres + ' ' + E.apellidos) AS [Empleado],
+    V.tipo_comprobante AS [Documento],
+    V.total_venta AS [Total],
+    P.metodo_pago AS [Pago]
+FROM farm.venta V
+INNER JOIN farm.cliente C ON V.idcliente = C.idcliente
+INNER JOIN farm.empleado E ON V.idempleado = E.idempleado
+INNER JOIN farm.pago P ON V.idventa = P.idventa;
 GO
