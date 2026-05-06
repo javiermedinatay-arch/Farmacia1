@@ -286,5 +286,10 @@ namespace Farmacia.Formularios
                 MessageBox.Show("Error al cargar el detalle: " + ex.Message);
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
