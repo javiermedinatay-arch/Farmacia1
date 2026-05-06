@@ -39,7 +39,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btn_EliminarProducto = new System.Windows.Forms.Button();
             this.btn_agregarProducto = new System.Windows.Forms.Button();
-            this.cbo_productos = new System.Windows.Forms.ComboBox();
+            this.cbo_producto = new System.Windows.Forms.ComboBox();
             this.txt_stock = new System.Windows.Forms.TextBox();
             this.txt_precioUni = new System.Windows.Forms.TextBox();
             this.txt_cantidad = new System.Windows.Forms.TextBox();
@@ -96,6 +96,7 @@
             this.cbo_empleado.Name = "cbo_empleado";
             this.cbo_empleado.Size = new System.Drawing.Size(292, 21);
             this.cbo_empleado.TabIndex = 1;
+            this.cbo_empleado.SelectedIndexChanged += new System.EventHandler(this.cbo_empleado_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -116,7 +117,7 @@
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.btn_EliminarProducto);
             this.panel2.Controls.Add(this.btn_agregarProducto);
-            this.panel2.Controls.Add(this.cbo_productos);
+            this.panel2.Controls.Add(this.cbo_producto);
             this.panel2.Controls.Add(this.txt_stock);
             this.panel2.Controls.Add(this.txt_precioUni);
             this.panel2.Controls.Add(this.txt_cantidad);
@@ -138,6 +139,7 @@
             this.btn_crearCliente.TabIndex = 13;
             this.btn_crearCliente.Text = "+";
             this.btn_crearCliente.UseVisualStyleBackColor = true;
+            this.btn_crearCliente.Click += new System.EventHandler(this.btn_crearCliente_Click);
             // 
             // btn_crearProducto
             // 
@@ -147,6 +149,7 @@
             this.btn_crearProducto.TabIndex = 12;
             this.btn_crearProducto.Text = "+";
             this.btn_crearProducto.UseVisualStyleBackColor = true;
+            this.btn_crearProducto.Click += new System.EventHandler(this.btn_crearProducto_Click);
             // 
             // cbo_cliente
             // 
@@ -155,6 +158,7 @@
             this.cbo_cliente.Name = "cbo_cliente";
             this.cbo_cliente.Size = new System.Drawing.Size(292, 21);
             this.cbo_cliente.TabIndex = 11;
+            this.cbo_cliente.SelectedIndexChanged += new System.EventHandler(this.cbo_cliente_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -174,6 +178,7 @@
             this.btn_EliminarProducto.TabIndex = 9;
             this.btn_EliminarProducto.Text = "ELIMINAR PRODUCTO";
             this.btn_EliminarProducto.UseVisualStyleBackColor = true;
+            this.btn_EliminarProducto.Click += new System.EventHandler(this.btn_EliminarProducto_Click);
             // 
             // btn_agregarProducto
             // 
@@ -183,14 +188,16 @@
             this.btn_agregarProducto.TabIndex = 8;
             this.btn_agregarProducto.Text = "AGREGAR PRODUCTO";
             this.btn_agregarProducto.UseVisualStyleBackColor = true;
+            this.btn_agregarProducto.Click += new System.EventHandler(this.btn_agregarProducto_Click);
             // 
-            // cbo_productos
+            // cbo_producto
             // 
-            this.cbo_productos.FormattingEnabled = true;
-            this.cbo_productos.Location = new System.Drawing.Point(153, 61);
-            this.cbo_productos.Name = "cbo_productos";
-            this.cbo_productos.Size = new System.Drawing.Size(292, 21);
-            this.cbo_productos.TabIndex = 2;
+            this.cbo_producto.FormattingEnabled = true;
+            this.cbo_producto.Location = new System.Drawing.Point(153, 61);
+            this.cbo_producto.Name = "cbo_producto";
+            this.cbo_producto.Size = new System.Drawing.Size(292, 21);
+            this.cbo_producto.TabIndex = 2;
+            this.cbo_producto.SelectedIndexChanged += new System.EventHandler(this.cbo_productos_SelectedIndexChanged);
             // 
             // txt_stock
             // 
@@ -198,6 +205,7 @@
             this.txt_stock.Name = "txt_stock";
             this.txt_stock.Size = new System.Drawing.Size(292, 20);
             this.txt_stock.TabIndex = 7;
+            this.txt_stock.TextChanged += new System.EventHandler(this.txt_stock_TextChanged);
             // 
             // txt_precioUni
             // 
@@ -205,6 +213,7 @@
             this.txt_precioUni.Name = "txt_precioUni";
             this.txt_precioUni.Size = new System.Drawing.Size(292, 20);
             this.txt_precioUni.TabIndex = 6;
+            this.txt_precioUni.TextChanged += new System.EventHandler(this.txt_precioUni_TextChanged);
             // 
             // txt_cantidad
             // 
@@ -212,6 +221,7 @@
             this.txt_cantidad.Name = "txt_cantidad";
             this.txt_cantidad.Size = new System.Drawing.Size(292, 20);
             this.txt_cantidad.TabIndex = 5;
+            this.txt_cantidad.TextChanged += new System.EventHandler(this.txt_cantidad_TextChanged);
             // 
             // label6
             // 
@@ -261,6 +271,7 @@
             this.dgv_venta.Name = "dgv_venta";
             this.dgv_venta.Size = new System.Drawing.Size(762, 181);
             this.dgv_venta.TabIndex = 3;
+            this.dgv_venta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_venta_CellContentClick);
             // 
             // btn_confirmarVenta
             // 
@@ -270,6 +281,7 @@
             this.btn_confirmarVenta.TabIndex = 9;
             this.btn_confirmarVenta.Text = "CONFIRMAR VENTA";
             this.btn_confirmarVenta.UseVisualStyleBackColor = true;
+            this.btn_confirmarVenta.Click += new System.EventHandler(this.btn_confirmarVenta_Click);
             // 
             // btn_cancelarVenta
             // 
@@ -279,6 +291,7 @@
             this.btn_cancelarVenta.TabIndex = 10;
             this.btn_cancelarVenta.Text = "CANCELAR VENTA";
             this.btn_cancelarVenta.UseVisualStyleBackColor = true;
+            this.btn_cancelarVenta.Click += new System.EventHandler(this.btn_cancelarVenta_Click);
             // 
             // button5
             // 
@@ -305,6 +318,7 @@
             this.txt_Subtotal.Name = "txt_Subtotal";
             this.txt_Subtotal.Size = new System.Drawing.Size(256, 20);
             this.txt_Subtotal.TabIndex = 12;
+            this.txt_Subtotal.TextChanged += new System.EventHandler(this.txt_Subtotal_TextChanged);
             // 
             // panel3
             // 
@@ -363,6 +377,7 @@
             this.cbo_MetodoPago.Name = "cbo_MetodoPago";
             this.cbo_MetodoPago.Size = new System.Drawing.Size(256, 21);
             this.cbo_MetodoPago.TabIndex = 16;
+            this.cbo_MetodoPago.SelectedIndexChanged += new System.EventHandler(this.cbo_MetodoPago_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -381,6 +396,7 @@
             this.cbo_TipoComprobante.Name = "cbo_TipoComprobante";
             this.cbo_TipoComprobante.Size = new System.Drawing.Size(256, 21);
             this.cbo_TipoComprobante.TabIndex = 18;
+            this.cbo_TipoComprobante.SelectedIndexChanged += new System.EventHandler(this.cbo_TipoComprobante_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -398,6 +414,7 @@
             this.txt_TotalFinal.Name = "txt_TotalFinal";
             this.txt_TotalFinal.Size = new System.Drawing.Size(256, 20);
             this.txt_TotalFinal.TabIndex = 20;
+            this.txt_TotalFinal.TextChanged += new System.EventHandler(this.txt_TotalFinal_TextChanged);
             // 
             // FrmRegistroVentas
             // 
@@ -449,7 +466,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_EliminarProducto;
         private System.Windows.Forms.Button btn_agregarProducto;
-        private System.Windows.Forms.ComboBox cbo_productos;
+        private System.Windows.Forms.ComboBox cbo_producto;
         private System.Windows.Forms.TextBox txt_stock;
         private System.Windows.Forms.TextBox txt_precioUni;
         private System.Windows.Forms.TextBox txt_cantidad;

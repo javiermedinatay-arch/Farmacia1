@@ -15,121 +15,62 @@ namespace Farmacia.Datos
         // Instancia de tu clase de conexión
         Conexion cn = new Conexion();
 
-        /// <summary>
-        /// Obtiene las categorías para llenar ComboBoxes en el formulario.
-        /// </summary>
-        public DataTable ListarCategorias()
+        public bool RegistrarVenta(Venta obj, DataTable detalles)
+        {
+            bool respuesta = false;
+            using (SqlConnection con = cn.GetConexion())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("farm.usp_RegistrarVentaCompleta", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Parámetros básicos de la venta
+                    cmd.Parameters.AddWithValue("@idcliente", obj.IdCliente);
+                    cmd.Parameters.AddWithValue("@idempleado", obj.IdEmpleado);
+                    cmd.Parameters.AddWithValue("@tipo_comprobante", obj.TipoComprobante);
+                    cmd.Parameters.AddWithValue("@total_venta", obj.TotalVenta);
+                    cmd.Parameters.AddWithValue("@metodo_pago", obj.MetodoPago);
+
+                    // Parámetro de tipo Tabla (El carrito de compras)
+                    // IMPORTANTE: Asegúrate que el DataTable 'detalles' tenga las columnas: idproducto, cantidad, precio_unitario
+                    SqlParameter paramDetalle = cmd.Parameters.AddWithValue("@detalles", detalles);
+                    paramDetalle.SqlDbType = SqlDbType.Structured;
+                    paramDetalle.TypeName = "farm.DetalleVentaType"; // Nombre del TYPE creado en SQL
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    respuesta = true;
+                }
+                catch (Exception ex)
+                {
+                    // Puedes lanzar la excepción para capturarla en el formulario
+                    throw new Exception("Error en la capa de datos: " + ex.Message);
+                }
+            }
+            return respuesta;
+        }
+
+        // Puedes mantener aquí los métodos para listar clientes o empleados si no creaste sus propios DAL
+        public DataTable ListarClientes()
         {
             using (SqlConnection con = cn.GetConexion())
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT idcategoria, nombre_categoria FROM farm.categoria", con);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM farm.vw_ListarClientes", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;
             }
         }
 
-        /// <summary>
-        /// Lista todos los productos registrados.
-        /// </summary>
-        public DataTable ListarProductos()
+        public DataTable ListarEmpleados()
         {
             using (SqlConnection con = cn.GetConexion())
             {
-                // Usamos la vista creada anteriormente para simplificar el código C#
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM farm.vw_ListarProductos", con);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM farm.vw_ListarEmpleados", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;
-            }
-        }
-
-        /// <summary>
-        /// Busca productos por nombre o laboratorio mediante procedimiento almacenado.
-        /// </summary>
-        public DataTable BuscarProducto(string texto)
-        {
-            using (SqlConnection con = cn.GetConexion())
-            {
-                // Deberás crear un SP llamado sp_BuscarProducto similar al del profesor
-                SqlCommand cmd = new SqlCommand("farm.sp_BuscarProducto", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@TextoBusqueda", texto);
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                return dt;
-            }
-        }
-
-        /// <summary>
-        /// Inserta un nuevo producto en la base de datos.
-        /// </summary>
-        public string InsertarProducto(Producto p)
-        {
-            using (SqlConnection con = cn.GetConexion())
-            {
-                SqlCommand cmd = new SqlCommand("farm.sp_InsertarProducto", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@Nombre", p.NombreProducto);
-                cmd.Parameters.AddWithValue("@Descripcion", (object)p.Descripcion ?? DBNull.Value);
-                cmd.Parameters.AddWithValue("@Precio", p.PrecioVenta);
-                cmd.Parameters.AddWithValue("@Stock", p.StockActual);
-                cmd.Parameters.AddWithValue("@FechaVencimiento", (object)p.FechaVencimiento ?? DBNull.Value);
-                cmd.Parameters.AddWithValue("@Laboratorio", p.Laboratorio);
-                cmd.Parameters.AddWithValue("@IdCategoria", p.IdCategoria);
-                cmd.Parameters.AddWithValue("@IdMarca", p.IdMarca);
-                cmd.Parameters.AddWithValue("@IdUnidad", p.IdUnidadMedida);
-
-                con.Open();
-                object result = cmd.ExecuteScalar();
-                return result != null ? result.ToString() : "Error al insertar producto";
-            }
-        }
-
-        /// <summary>
-        /// Actualiza los datos de un producto existente.
-        /// </summary>
-        public string ActualizarProducto(Producto p)
-        {
-            using (SqlConnection con = cn.GetConexion())
-            {
-                SqlCommand cmd = new SqlCommand("farm.sp_ModificarProducto", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@IdProducto", p.IdProducto);
-                cmd.Parameters.AddWithValue("@Nombre", p.NombreProducto);
-                cmd.Parameters.AddWithValue("@Descripcion", (object)p.Descripcion ?? DBNull.Value);
-                cmd.Parameters.AddWithValue("@Precio", p.PrecioVenta);
-                cmd.Parameters.AddWithValue("@Stock", p.StockActual);
-                cmd.Parameters.AddWithValue("@FechaVencimiento", (object)p.FechaVencimiento ?? DBNull.Value);
-                cmd.Parameters.AddWithValue("@Laboratorio", p.Laboratorio);
-                cmd.Parameters.AddWithValue("@IdCategoria", p.IdCategoria);
-                cmd.Parameters.AddWithValue("@IdMarca", p.IdMarca);
-                cmd.Parameters.AddWithValue("@IdUnidad", p.IdUnidadMedida);
-
-                con.Open();
-                object result = cmd.ExecuteScalar();
-                return result != null ? result.ToString() : "Error al actualizar producto";
-            }
-        }
-
-        /// <summary>
-        /// Elimina un producto (o cambia su estado a inactivo).
-        /// </summary>
-        public string EliminarProducto(int id)
-        {
-            using (SqlConnection con = cn.GetConexion())
-            {
-                SqlCommand cmd = new SqlCommand("farm.sp_EliminarProducto", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@IdProducto", id);
-
-                con.Open();
-                object result = cmd.ExecuteScalar();
-                return result != null ? result.ToString() : "Proceso completado";
             }
         }
     }
