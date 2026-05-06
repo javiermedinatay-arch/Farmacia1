@@ -84,7 +84,8 @@ namespace Farmacia.Formularios
 
         private void button10_Click(object sender, EventArgs e)
         {
-
+            FrmLoginAcceso nuevo = new FrmLoginAcceso();
+            nuevo.Show();
         }
     }
 }
