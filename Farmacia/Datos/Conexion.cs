@@ -16,5 +16,5 @@ namespace Farmacia.Datos
         {
             return new SqlConnection(cadena);
         }
-}
+    }
 }
