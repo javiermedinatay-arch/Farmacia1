@@ -9,7 +9,7 @@ namespace Farmacia.Datos
 {
     public class Conexion
     {
-        private string cadena = @"Server=(localdb)\MSSQLLocalDB;Database=FarmaciaDB;Trusted_Connection=True;";}
+        private string cadena = @"Server=(localdb)\MSSQLLocalDB;Database=FarmaciaDB;Trusted_Connection=True;";
         //private string cadena = @"Server=E74976425;Database=FarmaciaDB;Trusted_Connection=True;";
 
         public SqlConnection GetConexion()
