@@ -119,7 +119,7 @@ namespace Farmacia
 
         private void button10_Click(object sender, EventArgs e)
         {
-            FrmRegistroCompras nuevoFormulario = new FrmRegistroCompras();
+            FrmRegistroCliente nuevoFormulario = new FrmRegistroCliente();
             nuevoFormulario.Show();
         }
 
